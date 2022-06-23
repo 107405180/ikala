@@ -1,0 +1,527 @@
+
+
+
+    .three_icons {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .three_icons img {
+        width: 80px;
+        height: 80px;
+
+
+    }
+
+    button {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        background-color: #FEFAE0;
+
+    }
+
+    .icon1-move img:active {
+        cursor: pointer;
+        animation-name: icon1-move-to-bag;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+
+
+    }
+
+
+    @keyframes icon1-move-to-bag {
+        from {
+
+            transform: translateX(0) translatey(0);
+        }
+
+        to {
+            transform: translateX(400px)translatey(-250px);
+
+        }
+    }
+
+    .icon2-move img:active {
+        cursor: pointer;
+        animation-name: icon2-move-to-bag;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out
+    }
+
+    @keyframes icon2-move-to-bag {
+        from {
+            transform: translateX(0) translatey(0);
+
+        }
+
+
+        to {
+            transform: translatey(-250px);
+
+        }
+    }
+
+
+    .icon3-move img:active {
+        cursor: pointer;
+        animation-name: icon3-move-to-bag;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out
+    }
+
+    @keyframes icon3-move-to-bag {
+        from {
+
+            transform: translateX(0) translatey(0);
+
+        }
+
+        to {
+            transform: translateX(-450px)translatey(-250px);
+        }
+    }
+
+
+    .bag_opened {
+        height: 100px;
+        width: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 200px;
+        position: relative
+    }
+
+    h6 {
+        font-size: 18px;
+        line-height: 29px;
+        letter-spacing: 0.13em;
+        text-align: center;
+        color: #425828;
+
+    }
+
+    .divider {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        margin-top: 100px
+    }
+
+    span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 34px;
+        text-align: center;
+        color: #657256;
+    }
+
+    .divider-line-left {
+        width: 500px;
+        position: absolute;
+        left: -100px;
+        border: 1px solid #000000;
+    }
+
+    .divider-line-right {
+        width: 500px;
+        position: absolute;
+        right: -100px;
+        border: 1px solid #000000;
+    }
+
+    .header-logo img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+
+    .welcome-four-characters {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    body {
+        background-color: #FEFAE0;
+        width: 100vw;
+        height: 100vh;
+        margin: auto
+    }
+
+    /*carousel css*/
+    html,
+    body,
+    main {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #carousel {
+        position: relative;
+        height: 400px;
+        top: 50%;
+        transform: translateY(-80%);
+
+    }
+
+    #carousel div {
+        position: absolute;
+        transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+        opacity: 1;
+    }
+    /*控制每個人物大小與位置*/
+    #carousel div img {
+        width: 400px;
+        transition: width 1s;
+    }
+    /*中央圖片最左邊的人物如何移動、消失*/
+    /*transform可以變形、移動路徑等*/
+    #carousel div.hideLeft {
+        left: 0%;
+        opacity: 0;
+        transform: translateY(50%) translateX(50%);
+    }
+
+    #carousel div.hideLeft img {
+        width: 200px;
+    }
+    
+    #carousel div.hideRight {
+        left: 100%;
+        opacity: 0;
+        transform: translateY(50%) translateX(-50%);
+    }
+
+    #carousel div.hideRight img {
+        width: 200px;
+    }
+    /*點下一個之後，前一個人物如何移動*/
+    #carousel div.prev {
+        z-index: 5;
+        left: 30%;
+        transform: translateY(50px) translateX(-50%);
+    }
+
+    #carousel div.prev img {
+        width: 300px;
+    }
+
+    #carousel div.prevLeftSecond {
+       
+        left: 15%;
+        transform: translateY(50%) translateX(-50%);
+        opacity: .7;
+        z-index: 4;
+
+    }
+
+    #carousel div.prevLeftSecond img {
+        width: 200px;
+    }
+
+    #carousel div.selected {
+        z-index: 10;
+        left: 50%;
+        transform: translateY(0px) translateX(-50%);
+    }
+
+    #carousel div.next {
+        z-index: 5;
+        left: 70%;
+        transform: translateY(50px) translateX(-50%);
+    }
+
+    #carousel div.next img {
+        width: 300px;
+    }
+
+    #carousel div.nextRightSecond {
+        z-index: 4;
+        left: 85%;
+        transform: translateY(50%) translateX(-50%);
+        opacity: .7;
+    }
+
+    #carousel div.nextRightSecond img {
+        width: 200px;
+    }
+
+    /*.buttons {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 10px;
+    }*/
+
+    #prev {
+        width: 100px;
+        background-color: transparent;
+        border: none;
+        transform: rotate(0deg);
+        position: absolute;
+        left: 0;
+        top: 60%;
+    }
+
+    #next {
+        width: 100px;
+        background-color: transparent;
+        border: none;
+        transform: rotate(0deg);
+        position: absolute;
+        right: 0;
+        top: 60%;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    .selected h2 {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        display: block;
+
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        padding-bottom: 50px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 41px;
+        text-align: center;
+        color: #404040;
+
+    }
+
+    #carousel img {
+        scale: 80%
+    }
+
+    .selected .bubble {
+        position: absolute;
+        top: -100px;
+        left: 10%;
+        display: block;
+    }
+
+    .bubble {
+        display: none;
+    }
+
+    /*header*/
+    
+
+nav {
+    top: 0;
+    background-color: #FEFFF9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* navbar */
+.ham-icon {
+    display: none;
+}
+
+.mynavbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 25px 30px;
+}
+
+.mynavbar li {
+    list-style-type: none;
+    font-size: 20px;
+    color: #E9706E;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+
+.mynavbar li:hover {
+    color: #E9706E;
+    cursor: grab;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    color: #e9706e !important;
+}
+
+.nav-link:hover {
+    font-weight: 700;
+}
+
+
+/* footer */
+.footer {
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+    background-color: #E9706E;
+    height: 180px;
+    display: flex;
+    padding: 0 65px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center
+}
+
+.footerbar {
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    padding-bottom: 7px;
+}
+
+.footerbar li a {
+    list-style-type: none;
+    font-size: 20px;
+    color: #FEFFF9;
+    font-weight: 500;
+}
+
+.footerbar li a:hover {
+    text-decoration: none;
+    color: #FEFFF9;
+    cursor: grab;
+    font-weight: 700;
+}
+
+.copyright {
+    padding-top: 7px;
+    color: #FEFFF9;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 30px;
+}
+
+
+
+/* RWD */
+@media (max-width: 1514px) {
+    .cards {
+        width: calc(100vw*(600/1440));
+    }
+}
+
+
+@media (max-width: 1180px) {
+    .cards {
+        width: calc(100vw*(900/1440));
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* header */
+    .ham-icon {
+        display: inline;
+    }
+
+    .logo {
+        width: 170px;
+    }
+
+    .mynavbar li {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 4px 0;
+    }
+
+    .mynavbar {
+        width: 100vw;
+        padding: 12px 16px;
+    }
+
+    /* card area */
+    .cards {
+        width: 400px;
+    }
+
+    .cards li {
+        margin: 15px 12px;
+    }
+
+    .cards img {
+        width: 114px;
+    }
+
+    .card-area h3 {
+        font-size: 20px;
+        width: 270px;
+        margin: 30px 0;
+    }
+
+    /* flip */
+    .flip-card {
+        width: 120px;
+        height: 170px;
+    }
+
+
+    /* footer */
+    .footer {
+        width: 100vw;
+        height: 60px;
+    }
+
+    .footerbar {
+        display: none;
+    }
+
+    .copyright {
+        bottom: 24px;
+        font-size: 14px;
+    }
+
+
+}
+
+@media (max-width: 575px) {
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+
+    .mybtn {
+        height: 48px;
+        font-size: 20px;
+    }
+}

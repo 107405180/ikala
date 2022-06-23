@@ -1,0 +1,493 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="style-for-print.css" media="print">
+
+    <style>
+        .three_icons {
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .three_icons img {
+            width: 80px;
+            height: 80px;
+
+
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            border: none;
+            background-color: #FEFAE0;
+
+        }
+
+        .icon1-move img:active {
+            cursor: pointer;
+            animation-name: icon1-move-to-bag;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+
+
+        }
+
+
+        @keyframes icon1-move-to-bag {
+            from {
+
+                transform: translateX(0) translatey(0);
+            }
+
+            to {
+                transform: translateX(400px)translatey(-250px);
+
+            }
+        }
+
+        .icon2-move img:active {
+            cursor: pointer;
+            animation-name: icon2-move-to-bag;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out
+        }
+
+        @keyframes icon2-move-to-bag {
+            from {
+                transform: translateX(0) translatey(0);
+
+            }
+
+
+            to {
+                transform: translatey(-250px);
+
+            }
+        }
+
+
+        .icon3-move img:active {
+            cursor: pointer;
+            animation-name: icon3-move-to-bag;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out
+        }
+
+        @keyframes icon3-move-to-bag {
+            from {
+
+                transform: translateX(0) translatey(0);
+
+            }
+
+            to {
+                transform: translateX(-450px)translatey(-250px);
+            }
+        }
+
+
+        .bag_opened {
+            height: 100px;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 200px;
+            position: relative
+        }
+
+        h6 {
+            font-size: 18px;
+            line-height: 29px;
+            letter-spacing: 0.13em;
+            text-align: center;
+            color: #425828;
+
+        }
+
+        .divider {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            margin-top: 100px
+        }
+
+        span {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 34px;
+            text-align: center;
+            color: #657256;
+        }
+
+        .divider-line-left {
+            width: 500px;
+            position: absolute;
+            left: -100px;
+            border: 1px solid #000000;
+        }
+
+        .divider-line-right {
+            width: 500px;
+            position: absolute;
+            right: -100px;
+            border: 1px solid #000000;
+        }
+
+        .header-logo img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+
+        .welcome-four-characters {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        body {
+            background-color: #FEFAE0;
+            width: 100vw;
+            height: 100vh;
+            margin: auto
+        }
+
+        /*carousel css*/
+        html,
+        body,
+        main {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #carousel {
+            position: relative;
+            height: 400px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        }
+
+        #carousel div {
+            position: absolute;
+            transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+            opacity: 1;
+        }
+
+        #carousel div img {
+            width: 400px;
+            transition: width 1s;
+        }
+
+        #carousel div.hideLeft {
+            left: 0%;
+            opacity: 0;
+            transform: translateY(50%) translateX(-50%);
+        }
+
+        #carousel div.hideLeft img {
+            width: 200px;
+        }
+
+        #carousel div.hideRight {
+            left: 100%;
+            opacity: 0;
+            transform: translateY(50%) translateX(-50%);
+        }
+
+        #carousel div.hideRight img {
+            width: 200px;
+        }
+
+        #carousel div.prev {
+            z-index: 5;
+            left: 30%;
+            transform: translateY(50px) translateX(-50%);
+        }
+
+        #carousel div.prev img {
+            width: 300px;
+        }
+
+        #carousel div.prevLeftSecond {
+            z-index: 4;
+            left: 15%;
+            transform: translateY(50%) translateX(-50%);
+            opacity: .7;
+
+        }
+
+        #carousel div.prevLeftSecond img {
+            width: 200px;
+        }
+
+        #carousel div.selected {
+            z-index: 10;
+            left: 50%;
+            transform: translateY(0px) translateX(-50%);
+        }
+
+        #carousel div.next {
+            z-index: 5;
+            left: 70%;
+            transform: translateY(50px) translateX(-50%);
+        }
+
+        #carousel div.next img {
+            width: 300px;
+        }
+
+        #carousel div.nextRightSecond {
+            z-index: 4;
+            left: 85%;
+            transform: translateY(50%) translateX(-50%);
+            opacity: .7;
+        }
+
+        #carousel div.nextRightSecond img {
+            width: 200px;
+        }
+
+        /*.buttons {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+        }*/
+
+        #prev {
+            width: 100px;
+            background-color: transparent;
+            border: none;
+            transform: rotate(0deg);
+            position: absolute;
+            left: 0;
+            top: 80%;
+        }
+
+        #next {
+            width: 100px;
+            background-color: transparent;
+            border: none;
+            transform: rotate(0deg);
+            position: absolute;
+            right: 0;
+            top: 80%;
+        }
+
+        h2 {
+            display: none;
+        }
+
+        .selected h2 {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            display: block;
+
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            padding-bottom: 50px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 34px;
+            line-height: 41px;
+            text-align: center;
+            color: #404040;
+
+        }
+
+        #carousel img {
+            scale: 80%
+        }
+
+        .selected .bubble {
+            position: absolute;
+            top: -100px;
+            left: 10%;
+            display: block;
+        }
+
+        .bubble {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header logo-->
+    <div class="header-logo">
+        <div>
+            <img src="./Logo_有字版 1.png" alt="步步logo" height="100px" width="100px">
+        </div>
+    </div>
+
+
+
+    <!--carousel-->
+    <main>
+
+        <h1>歡迎光臨!</h1>
+
+        <div id="carousel">
+
+            <div class="prevLeftSecond">
+                <div class="bubble"><img src="./綺.png"></div>
+                <img src="./綺 A.png">
+            </div>
+
+            <div class="prev">
+                <div class="bubble"><img src="./Crystal.png"></div>
+                <img src="./晶A.png">
+            </div>
+
+            <div class="selected">
+                <div class="bubble"><img src="./文源.png"></div>
+                <img src="./莊A.png">
+            </div>
+
+            <div class="next">
+                <div class="bubble"><img src="./May.png"></div>
+                <img src="./玫 A.png">
+            </div>
+
+            <div class="nextRightSecond">
+                <div class="bubble"><img src="./Elka.png"></div>
+                <img src="./珊 A.png">
+            </div>
+
+
+
+        </div>
+
+        <div class="buttons">
+            <button id="prev">
+                <img src="./carousel left arrow.png">
+            </button>
+
+            <button id="next">
+                <img src="./carousel right arrow.png">
+            </button>
+        </div>
+
+    </main>
+
+    <!--分割線-->
+    <div class=divider>
+        <img src="./Logo_無字版 1.png" alt="步步-logo" height=86px width="86px">
+        <div class="divider-line-left"></div>
+        <div class="divider-line-right"></div>
+        <span>準備好出發了嗎？點擊下方物件前進吧！</span>
+
+    </div>
+
+    <div class="bag_opened">
+        <h6>你的背包</h6>
+        <img src="./Icons-bag.png">
+    </div>
+
+    <!--three icons in a row-->
+    <div class="three_icons">
+
+        <button class="icon1-move" >
+            <a style="text-decoration:none" href="https://andrewtsng019.github.io/final-group4/type-watch.html" target="_blank">
+                <img src="./Icon1-cam.png">
+                <h6>帶你去看</h6>
+            </a>
+        </button>
+
+        <button class="icon2-move">
+            <img src="./Icon-2-food.png">
+            <h6>帶你去吃</h6>
+        </button>
+
+        <button class="icon3-move">
+            <a style="text-decoration:none" href="https://andrewtsng019.github.io/final-group4/type-play.html" target="_blank">
+                <img src="./Icons-play.png">
+                <h6>帶你去玩</h6>
+            </a>
+        </button>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+    <script>
+        function moveToSelected(element) {
+
+            if (element == "next") {
+                var selected = $(".selected").next();
+            } else if (element == "prev") {
+                var selected = $(".selected").prev();
+            } else {
+                var selected = element;
+            }
+
+            var next = $(selected).next();
+            var prev = $(selected).prev();
+            var prevSecond = $(prev).prev();
+            var nextSecond = $(next).next();
+
+            $(selected).removeClass().addClass("selected");
+
+            $(prev).removeClass().addClass("prev");
+            $(next).removeClass().addClass("next");
+
+            $(nextSecond).removeClass().addClass("nextRightSecond");
+            $(prevSecond).removeClass().addClass("prevLeftSecond");
+
+            $(nextSecond).nextAll().removeClass().addClass('hideRight');
+            $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+
+        }
+
+        // Eventos teclado
+        $(document).keydown(function (e) {
+            switch (e.which) {
+                case 37: // left
+                    moveToSelected('prev');
+                    break;
+
+                case 39: // right
+                    moveToSelected('next');
+                    break;
+
+                default: return;
+            }
+            e.preventDefault();
+        });
+
+        $('#carousel div').click(function () {
+            moveToSelected($(this));
+        });
+
+        $('#prev').click(function () {
+            moveToSelected('prev');
+        });
+
+        $('#next').click(function () {
+            moveToSelected('next');
+        });
+    </script>
+</body>
+
+</html>
